@@ -4,4 +4,4 @@ for q in range(10):
     elif (q%2)!=0:
         print('odd',q)
     else:
-        print("its fucked")
+        print("python broked")
