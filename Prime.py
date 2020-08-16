@@ -1,6 +1,7 @@
 print("enter a number to check if its prime")
-num = int(input())
-if num > 1:
+inp = float(input())
+num = int(inp)
+if ((num==inp)and(num > 1)):
    for i in range(2,num):
        if (num % i) == 0:
            print(num,"is not a prime number")
