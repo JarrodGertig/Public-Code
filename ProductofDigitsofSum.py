@@ -1,20 +1,18 @@
 #Product of Digits of Sum
 #Programmer: Jarrod Gertig
 #Date: Sept. 4, 2020
+#
 
 #Main math function
 def funny_func(a,args):         # To get the Product of Digits of Sum:
+    beta = a                    #    beta is placeholder for sum and products
     for arg in args:            #    for each number
-        a += arg                #      add them all to the first number
-    spread = list(str(a))       #    make a list of digits in the sum
-    beta = 1                    #    multiplier of 1
-    for letter in spread:       #    for each digit    
-        beta *= int(letter)     #       multiply all the digits
+        beta += arg             #      add it to the summation
     while len(str(beta))>1:     #    while digit count is > 1
         delta = list(str(beta)) #       make new list of digits
         beta = 1                #       multiplier
-        for letter in delta:    #       for each digit
-            beta *= int(letter) #          multiply
+        for digit in delta:     #       for each digit
+            beta *= int(digit)  #          multiply
     print(beta)                 #    When only one digit remains, print it.
 
 #Function to get effective inputs
