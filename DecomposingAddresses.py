@@ -1,12 +1,12 @@
-#Product of Digits of Sum
+#Decomposition of an Address string
 #Programmer: Jarrod Gertig
 #Date: Sept. 4, 2020
 #
 
 print("Use decomp() with an address string like '1234 Rainbow Rd, Albuquerque, NM, 87123' as the input parameter.")
 
-#Main math function
-def decomp(addy):               # To get the Product of Digits of Sum:
+#Main function
+def decomp(addy):              
     global numb,road,city,stat,post
     numb=get_numb(addy)
     road=get_road(addy)
