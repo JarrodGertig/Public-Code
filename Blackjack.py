@@ -13,12 +13,13 @@ def blackjack(cards):               # Blackjack function
             a += 1                      #       count up aces
         else:                           #    if its a number
             i += int(cards[x])          #       add it in
-    if a > 0:                           # if there were aces
-        for x in range(a):              #    for each ace
-            if i <= 10:                 #       if current hand sum is 10 or less
-                i += 11                 #          add the full Ace 11
-            else:                       #       if hand sum greater than 10
-                i += 1                  #          add the low Ace 1
+    if a > 0:                           # if aces were in hand
+        for x in range(a-1):            #    for all but one ace
+            i += 1                      #       add 1 to hand sum
+        if i > 10:                      #    for last ace, if hand sum more than 10
+            i += 1                      #       add low Ace 1
+        else:                           #    if hand sum 10 or less
+            i += 11                     #       add high Ace 11
     print("Your cards add up to "+str(i))
     if i <= 21:                         # if hand sum is 21 or less
         return False                    #    return False
