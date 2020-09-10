@@ -3,27 +3,27 @@
 #Date: September 9, 2020
 #play blackjack
 
-def blackjack(cards):
-    i = 0
-    a = 0
-    for x in range(len(cards)):
-        if cards[x] in ['K','Q','J']:
-            i += 10
-        elif cards[x] == 'A':
-            a += 1
-        else:
-            i += int(cards[x])
-    if a > 0:
-        for x in range(a):
-            if i <= 10:
-                i += 11
-            else:
-                i += 1
+def blackjack(cards):               # Blackjack function
+    i = 0                               # card sum variable
+    a = 0                               # ace count variable
+    for x in range(len(cards)):         # check each card in hand
+        if cards[x] in ['K','Q','J']:   #    if its a facecard
+            i += 10                     #       add 10
+        elif cards[x] == 'A':           #    if its an ace
+            a += 1                      #       count up aces
+        else:                           #    if its a number
+            i += int(cards[x])          #       add it in
+    if a > 0:                           # if there were aces
+        for x in range(a):              #    for each ace
+            if i <= 10:                 #       if current hand sum is 10 or less
+                i += 11                 #          add the full Ace 11
+            else:                       #       if hand sum greater than 10
+                i += 1                  #          add the low Ace 1
     print("Your cards add up to "+str(i))
-    if i <= 21:
-        return False
-    else:
-        return True
+    if i <= 21:                         # if hand sum is 21 or less
+        return False                    #    return False
+    else:                               # if hand sum over 21
+        return True                     #    return True
 
 def runner():
     data = input("Please enter a card series: ")
